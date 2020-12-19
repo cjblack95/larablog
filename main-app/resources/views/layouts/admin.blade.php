@@ -22,9 +22,15 @@
 <body>
     <div id="app">
 
-        <header class="main-header">
+        <header class="main-header fixed-top">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="/">{{ config('app.name') }}</a>
+                <div class="navbar-brand">
+                    <a href="/">{{ config('app.name') }}</a>
+
+                    <span id="sidebar-toggler" class="text-right">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,7 +74,7 @@
                 @include('admin.partials.main-sidebar')
             </aside>
 
-            <main class="main-content clearfix container-fluid">
+            <main class="main-content container-fluid" style="padding: 15px;">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">

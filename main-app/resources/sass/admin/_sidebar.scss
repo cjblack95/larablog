@@ -1,7 +1,8 @@
 .main-sidebar {
     width: 280px;
-    float: left;
-    position: relative;
-    height: 100vh;
+    position: absolute;
+    min-height: 100vh;
     background-color: #001027;
+    left: 0;
+    top: 56px;
 }
