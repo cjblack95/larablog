@@ -11,9 +11,13 @@
 ///                     ADMIN AUTHENTICATED ROUTES                      ///
 ///////////////////////////////////////////////////////////////////////////
 Route::middleware('auth:admin')->group(function () {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index')->name('admin.home');
 });
 
 ///////////////////////////////////////////////////////////////////////////
 ///                         ADMIN AUTH ROUTES                           ///
 ///////////////////////////////////////////////////////////////////////////
+Route::name('admin.')->group(function () {
+    Auth::routes(['register' => false]);
+});
+

@@ -49,10 +49,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:larablog_users'],
+            'mobile' => ['required', 'string', 'max:14', 'unique:larablog_users'],
+            'username' => ['required', 'string', 'max:25', 'unique:larablog_users'],
+            'password' => ['required', 'min:8', 'confirmed']
         ]);
     }
 
@@ -60,14 +64,18 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
+            'mobile' => $data['mobile'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
+
         ]);
     }
 }

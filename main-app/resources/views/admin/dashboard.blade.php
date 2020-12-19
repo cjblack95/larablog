@@ -1,13 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Larablog Admin</title>
-</head>
-<body>
-    <h2>Larablog Admin</h2>
-</body>
-</html>
+@extends('layouts.admin', ['title' => 'Dashboard'])
+@section('title', 'Dashboard')
+@section('content')
+
+    <div class="dashboard-content px-3">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        You are logged in as {{ Auth::guard('admin')->user()->first_name }}!
+    </div>
+
+@endsection

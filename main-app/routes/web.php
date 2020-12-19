@@ -11,6 +11,16 @@
 |
 */
 
+use Illuminate\Support\Arr;
+
+Route::get('/test', function () {
+   dd(URL::temporarySignedRoute('home', now()->addMinutes(30)));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

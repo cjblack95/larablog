@@ -112,7 +112,7 @@ return [
 
         'admins' => [
             'provider' => 'admins',
-            'table' => 'larablog_admin_password_resets',
+            'table' => 'larablog_admins_password_resets',
             'expire' => 60,
             'throttle' => 60,
         ]
