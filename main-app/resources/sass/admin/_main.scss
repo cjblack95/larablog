@@ -4,4 +4,9 @@
 .main-content {
     padding-left: 295px !important;
     margin-top: 56px;
+    transition: padding-left 300ms ease-in-out;
+
+    &.expanded {
+        padding-left: 60px !important;
+    }
 }

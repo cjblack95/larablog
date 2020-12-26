@@ -9,12 +9,11 @@
 
     <title> @yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/admin.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ==" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
@@ -70,11 +69,11 @@
         </header>
 
         @auth('admin')
-            <aside class="main-sidebar">
+            <aside class="main-sidebar" id="mainSidebar">
                 @include('admin.partials.main-sidebar')
             </aside>
 
-            <main class="main-content container-fluid" style="padding: 15px;">
+            <main id="mainContent" class="main-content container-fluid" style="padding: 15px;">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
@@ -110,5 +109,11 @@
             Copyright &copy; {{ date('Y') }} <a href="{{ route('admin.home') }}">{{ config('app.name') }}</a>
         </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 </html>
